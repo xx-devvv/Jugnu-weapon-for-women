@@ -2,33 +2,29 @@
 
 **A personal safety companion for women on the move.**
 
-Built for **Vihaan X** by **404 Name Not Found**.
-
-Jugnu is a mobile-first web app for planning a walk, finding nearby help, and sharing an SOS with a trusted contact. The hackathon demo starts at DTU in Delhi. It combines live walking directions with advisory route comparisons, a microphone-based distress trigger, and a call to a configured contact.
+Jugnu is a mobile-first web app for comparing walking routes, finding nearby help, and starting an SOS. It combines live walking directions with advisory route scores, on-device detection of possible screams, and optional calling to a configured trusted contact.
 
 ### The AI assessment backbone
 
-<a href="https://maritime.sh/"><img src="docs/sponsors/maritime.png" alt="Maritime logo" width="44" height="44"></a>
+<a href="https://maritime.sh/"><img src="https://maritime.sh/icon.png" alt="Maritime logo" width="44" height="44"></a>
 &nbsp;
-<a href="https://www.withprune.com/"><img src="docs/sponsors/prune.png" alt="Prune logo" width="44" height="44"></a>
+<a href="https://www.withprune.com/"><img src="https://www.withprune.com/apple-touch-icon.png" alt="Prune logo" width="44" height="44"></a>
 
 **Maritime and Prune power Jugnu's incident assessment.** Maritime runs the private Python agent. Prune connects that agent to the configured vision model and can return a request receipt. [Explore the Maritime and Prune integration](#maritime-and-prune).
 
-**Vihaan X presentation** · [View all 14 slides on GitHub](docs/jugnu-presentation.md) · [Download the PDF](Jugnu%20ppt%20%281%29.pdf)
-
 ![Jugnu desktop home screen with route planning and safety tools](docs/screenshots/home-desktop.webp)
 
-## Try the demo
+## Try Jugnu
 
-1. Open **Routes** and choose **Samaypur Badli Metro**, **Rithala Metro**, or **Japanese Park**. Compare the walking options Google Maps returns. Switch between daytime and nighttime, or ask AI to explain the suggested route.
+1. Open **Routes**, enter a starting point and destination, and compare the walking options Google Maps returns. Switch between daytime and nighttime, or ask AI to explain the suggested route.
 2. Sign in, add a trusted contact, and set a four-digit SOS passcode. From a planned route, select **Start monitoring** to bring the map into an armed safety session.
 3. With the demo account and Voice configured, **Start SOS** or a detected scream immediately requests a call to the saved demo contact. Audible mode starts the buzzer. A scream also opens an eight-second countdown for review. The passcode can dismiss the alert or silence the alarm after the call request. The police call appears as a labeled simulation.
-4. Open **Community** to see the fictional DTU posts and submit a report. Use **Nearby help** to look up hospitals and police stations around a searched area or your current location.
+4. Open **Community** to browse sample posts or submit a report. Use **Nearby help** to look up hospitals and police stations around a searched area or your current location.
 5. With **Maritime and Prune** configured, open a saved incident, select **AI assessment**, and choose **Request assessment**. You can share one frame from a local recording by opting in. Jugnu displays the advisory summary and indicates whether Prune returned a receipt.
 
 | Walking routes | Safety session setup | Community feed |
 | --- | --- | --- |
-| ![Phone layout showing DTU walking routes and advisory scores](docs/screenshots/route-planner.webp) | ![Phone layout showing safety session setup with alert and recording choices](docs/screenshots/safety-session.webp) | ![Phone layout showing the sample DTU community reports](docs/screenshots/community.webp) |
+| ![Phone layout showing walking routes and advisory scores](docs/screenshots/route-planner.webp) | ![Phone layout showing safety session setup with alert and recording choices](docs/screenshots/safety-session.webp) | ![Phone layout showing sample community reports](docs/screenshots/community.webp) |
 
 | Nearby help | SOS demo |
 | --- | --- |
@@ -37,8 +33,6 @@ Jugnu is a mobile-first web app for planning a walk, finding nearby help, and sh
 The SOS screenshot uses a simulated provider status. The live Twilio trial call was separately verified by the recipient. Community demo posts use fictional profiles and are labeled as examples.
 
 ## System architecture
-
-![Jugnu system architecture showing browser detection, Flask services and immediate Twilio calling](docs/jugnu-system-architecture.png)
 
 ```mermaid
 flowchart LR
@@ -128,11 +122,9 @@ Maritime and Prune form the backbone of Jugnu's optional AI assessment workflow.
 
 During a pending audio alert in the demo, the assessment can use two usable frames. A timely, clearly benign result can close the pending alert. Dark, missing, or inconclusive footage keeps the countdown active. Twilio requests the saved contact call as soon as the incident syncs, while the assessment runs separately.
 
-The assessment path was verified with mocked services. To run it live, deploy the Maritime agent and configure a Prune app key and compatible vision provider. [Live setup guide](docs/jugnu-live-setup.md#sponsor-credentials)
+The assessment path was verified with mocked services. To run it live, deploy the Maritime agent and configure a Prune app key and compatible vision provider. [Live setup guide](docs/jugnu-live-setup.md)
 
 ## Tech stack
-
-![Jugnu technology stack across the browser, backend, maps, voice and AI](docs/jugnu-tech-stack-pipeline.png)
 
 | Layer | Technologies |
 | --- | --- |
