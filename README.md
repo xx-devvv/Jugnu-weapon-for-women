@@ -14,7 +14,7 @@ Jugnu is a mobile-first web app for planning a walk, finding nearby help, and sh
 
 **Maritime and Prune power Jugnu's incident assessment.** Maritime runs the private Python agent. Prune connects that agent to the configured vision model and can return a request receipt. [Explore the Maritime and Prune integration](#maritime-and-prune).
 
-**Vihaan X presentation** · [Download the PDF](Jugnu%20ppt%20%281%29.pdf)
+**Vihaan X presentation** · [View all 14 slides on GitHub](docs/jugnu-presentation.md) · [Download the PDF](Jugnu%20ppt%20%281%29.pdf)
 
 ![Jugnu desktop home screen with route planning and safety tools](docs/screenshots/home-desktop.webp)
 
