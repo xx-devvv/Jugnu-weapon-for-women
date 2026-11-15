@@ -151,10 +151,3 @@ npm run dev
 
 Open [localhost:3000](http://localhost:3000). Enable camera, microphone, and location from localhost or HTTPS. Follow the [live setup guide](docs/jugnu-live-setup.md) for Maps, OmniRoute or Gemini, Twilio, Maritime, and Prune. Use your own demo account and approved recipient. Keep credentials in local environment files.
 
-## Demo limits
-
-- The browser needs an awake, open page for microphone monitoring. YAMNet detects possible screams without identifying the speaker’s gender. In a small speaker-held-out benchmark, it triggered on 9 of 10 female-labeled scream clips and 2 of 3 male-labeled scream clips. [Deeply SLR99 dataset](https://openslr.org/99/)
-- Videos stay in the device’s browser storage. Saved incident metadata is synced to the account database.
-- Police dispatch is simulated during the hackathon demo. Public hosting, cloud evidence backup, and institutional evidence sharing are pending.
-
-Jugnu builds on [Go Guardian by Nidhi Pai](https://github.com/Nidhi-Pai/go-guardian).
